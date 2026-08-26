@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: whatsapp-tracker
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: VERIFY_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false
+      - key: WHATSAPP_DISPLAY_PHONE
+        sync: false
+      - key: GRAPH_API_VERSION
+        value: v25.0
